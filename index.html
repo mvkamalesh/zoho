@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pull Credit Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span class="crmLogoIcon mR8"></span></a><span
+                class="crmLogoText">CRM</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Leads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Client Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="container-fluid">
+        <div class="row containerbg">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Leads
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Client Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <main class="col-md-9 col-lg-10 righcontent">
+                <!-- Tabs -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <ul class="nav nav-tabs mt-4" id="myTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="client1-tab" data-bs-toggle="tab" href="#client1" role="tab"
+                                aria-controls="client1" aria-selected="true" onclick="reloadPage()">Client
+                                #1</a>
+                        </li>
+                        <li class="nav-item hideclient" role="presentation">
+                            <a class="nav-link" id="client2-tab" data-bs-toggle="tab" href="#client2" role="tab"
+                                aria-controls="client2" aria-selected="false" onclick="showClient('client2')">Client
+                                #2</a>
+                        </li>
+                    </ul>
+                    <div class="" ml-auto>
+                        <button class="pull-credit-button" id="pullCreditButton">
+                            Pull New Credit Report
+                        </button>
+                        <button class="pull-credit-button disabled" id="viewcreditbutton">
+                            View Existing Credit Report
+                        </button>
+                    </div>
+                </div>
+                <!-- Tab Content -->
+                <div class="tab-content mt-4">
+                    <div class="tab-pane fade show active" id="client1" role="tabpanel" aria-labelledby="client1-tab">
+                        <div class="nameinfo hideclient">
+                            <p><span>Name:</span><span class="ps-2">George Testg</span></p>
+                            <p><span>Email:</span><span class="ps-2">georgetest@mailinator.com</span></p>
+                        </div>
+                        <!-- Content for Client1 tab goes here -->
+                        <div id="myTabsContent">
+                            <div class="mt-4">
+
+
+                                <!-- Tab Content -->
+                                <div class="tab-content" id="myTabsContent">
+
+                                    <div class="tab-pane fade show active" id="report" role="tabpanel"
+                                        aria-labelledby="report-tab">
+
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <ul class="nav nav-tabs reportab" id="myTabs1" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a class="nav-link active" id="report-tab" data-bs-toggle="tab"
+                                                            href="#report" role="tab" aria-controls="report"
+                                                            aria-selected="true">Report</a>
+                                                    </li>
+                                                </ul>
+                                                <iframe width="100%" height="600px" src="1breport.html"
+                                                    frameborder="0"></iframe>
+                                            </div>
+                                            <div class="col-4">
+                                                <ul class="nav nav-tabs reportab" id="myTabs1" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a class="nav-link active" id="report-tab" data-bs-toggle="tab"
+                                                            href="#report" role="tab" aria-controls="report"
+                                                            aria-selected="true">Questions</a>
+                                                    </li>
+                                                </ul>
+                                                <form id="genquestions" class="mt-4">
+
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">1. Could you
+                                                                    provide a previous address you resided at?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">2. Please
+                                                                    provide the name of a creditor you currently have an
+                                                                    open line of credit with?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer1" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer1" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer1" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">3. What is
+                                                                    the
+                                                                    monthly automobile payment amount on a vehicle with
+                                                                    a loan with a lender?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer2" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer2" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer2" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">4. What is
+                                                                    the name of the creditor that holds your
+                                                                    mortgage?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer3" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer3" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer3" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">5. What is
+                                                                    the highest balance you are carrying on one of your
+                                                                    credit cards?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer4" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer4" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer4" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="questionwrap mb-3">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="questionNo1" class="form-label">6. Could you
+                                                                    provide us with the most recent credit card you
+                                                                    opened?</label>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="d-flex radio-group">
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer5" id="yes" value="Yes">
+                                                                    <label class="form-check-label"
+                                                                        for="yes">Correct</label>
+                                                                </div>
+                                                                <div class="form-check me-3">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer5" id="no" value="No">
+                                                                    <label class="form-check-label"
+                                                                        for="no">Incorrect</label>
+                                                                </div>
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="answer5" id="na" value="N/A">
+                                                                    <label class="form-check-label" for="na">N/A</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="auth-unauth">
+                                                        <button type="submit" id="questsubmit"
+                                                            class="btn btn-primary mt-0">Next</button>
+                                                      <!--  <button type="submit" id="questsubmit"
+                                                            class="btn btn-secondary mt-0">Not Authenticated</button> -->
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="client2" role="tabpanel" aria-labelledby="client2-tab">
+                        <!-- Content for Client2 tab goes here -->
+                        <div class="nameinfo">
+                            <p><span>Name:</span><span class="ps-2">John Doe</span></p>
+                            <p><span>Email:</span><span class="ps-2">johndoe@mailinator.com</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="debtssection" id="debtscontent">
+                    <!-- Debs table -->
+                    <table class="debtstable">
+                        <tr>
+                            <th>Total Accounts</th>
+                            <th>Current Debt Amount</th>
+                            <th>Original Debt Amount</th>
+                            <th>Total Current Payments</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$71,000</td>
+                            <td>$149,750.00</td>
+                            <td>$2,700.00</td>
+                        </tr>
+                    </table>
+                    <span class="cba">Client Debts / Accounts</span>
+                    <div class="button-container">
+                        <!-- Buttons -->
+                        <a href="#" class="button" id="openDebtsModalButton" onclick="showDebtsModal()"><i
+                                class="fa fa-plus-circle"></i>Add Debts Manually</a>
+
+                    </div>
+
+                    <table class="debt-table">
+                        <tr>
+                            <th>Creditor</th>
+                            <th>Collection</th>
+                            <th>Account#</th>
+                            <th>Debt Type</th>
+                            <th>Current Amount</th>
+                            <th>Whose Debt</th>
+                            <th>Current Payment</th>
+                            <th>Last Payment Date</th>
+                            <th>#Notes</th>
+
+                            <th>Enrolled</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>0</td>
+
+                            <td><input type="checkbox"></td>
+                            <td class="actionitem"><i class="fa fa-pencil"></i>&nbsp;&nbsp;&nbsp;<i
+                                    class="fa fa-trash "></i></td>
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>0</td>
+
+                            <td><input type="checkbox"></td>
+                            <td class="actionitem"><i class="fa fa-pencil"></i>&nbsp;&nbsp;&nbsp;<i
+                                    class="fa fa-trash "></i></td>
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>0</td>
+                            <td><input type="checkbox"></td>
+                            
+                            <td class="actionitem"><i class="fa fa-pencil"></i>&nbsp;&nbsp;&nbsp;<i
+                                    class="fa fa-trash "></i></td>
+                        </tr>
+                    </table>
+                    <div class="align-right">
+                        <button type="button" class="btn btn-primary mt-2" data-dismiss="modal" id="addtradeline">Preview
+                            Trade Lines</button>
+                    </div>
+                    <!-- Debts table ends -->
+                </div>
+                <div class="editdebts mt-4" id="editdebts">
+                    <!-- Debs table -->
+                    <h4 class="cba ps-2">Enrolled Debts</h4>
+                    <table class="debtstable">
+                        <tr>
+                            <th>NUM DEBTS ENROLLED</th>
+                            <th>CURRENT</th>
+                            <th>AVERAGE</th>
+                            <th>CURRENT PMTS</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$128,000</td>
+                            <td>$42,666.67</td>
+                            <td>$4,000.00</td>
+                        </tr>
+                    </table>
+                    <div class="button-container mt-4">
+                        <!-- Buttons -->
+                        <a href="#" class="button edit" id="editdebt-btn"><i class="fa fa-edit"></i>Edit Debts</a>
+                    </div>
+
+                    <table class="debt-table">
+                        <tr>
+                            <th>Creditor</th>
+                            <th>Collection</th>
+                            <th>Account#</th>
+                            <th>Debt Type</th>
+                            <th>Current Amount</th>
+                            <th>Whose Debt</th>
+                            <th>Current Payment</th>
+                            <th>Last Payment Date</th>
+                            <th>#Notes</th>
+                            <th>Enrolled</th>
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>No</td>
+                            <td>1</td>
+
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>No</td>
+                            <td>1</td>
+
+                        </tr>
+                        <tr>
+                            <td>NORDSTM/TD</td>
+                            <td></td>
+                            <td>234565W34Q24U54</td>
+                            <td></td>
+                            <td>$0.00</td>
+                            <td>Applicant</td>
+                            <td>$0.00</td>
+                            <td></td>
+                            <td>No</td>
+                            <td>1</td>
+
+                        </tr>
+                    </table>
+                    <div class="align-right">
+                        <button type="button" class="btn btn-primary mt-2" data-dismiss="modal" id="addtradeline">Save
+                            Trade Lines</button>
+                    </div>
+                    <!-- Debts table ends -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add a modal for displaying debts.html content -->
+    <div class="modal fade custom-width-modal" id="debtsModal" tabindex="-1" role="dialog"
+        aria-labelledby="debtsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="debtsModalLabel">System Fields</h5>
+                    <button type="button" class="close rounded-circle" data-dismiss="modal" aria-label="Close"
+                        id="closeDebtsModal">
+                        <span aria-hidden="true" class="close-icon">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content from debts.html will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <!-- Add a confirmation modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                    <button type="button" class="close" id="ConfirmClose" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to pull a credit report?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="confirmNo">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmYes">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--confirmation for delte -->
+    <div class="modal fade" id="confirmationModaldel" tabindex="-1" role="dialog"
+        aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to delete this item?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        id="confirmNodel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmYesdel">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Link to Bootstrap JS (you may need to adjust the path) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showClient(clientId, secondTabId, tabToClickId) {
+            // Hide all tab content in myTabs
+            document.querySelectorAll('.tab-pane').forEach(function (el) {
+                el.classList.remove('show', 'active');
+            });
+
+            // Show the selected tab content in myTabs
+            document.getElementById(clientId).classList.add('show', 'active');
+
+            // Trigger a click on the specified tab in myTabs1
+            const tabToClick = document.querySelector(secondTabId + ' a.nav-link[href="#' + tabToClickId + '"]');
+            if (tabToClick) {
+                tabToClick.click();
+            }
+        }
+        function reloadPage() {
+            location.reload();
+        }
+
+
+        $(document).ready(function () {
+            // Function to check if #myTabsContent is visible
+            function isMyTabsContentVisible() {
+                return $('#myTabsContent').is(':visible');
+            }
+
+            // Listen for the "Pull Credit Report" button click
+            $('#pullCreditButton').click(function () {
+                $('#debtscontent').hide();
+                $('#editdebts').hide();
+                if (!isMyTabsContentVisible()) {
+                    // Open the confirmation modal
+                    $('#confirmationModal').modal('show');
+                }
+            });
+
+            // Listen for the "Yes" button click in the confirmation modal
+            $('#confirmYes').click(function () {
+                // Show #myTabsContent
+                $('#myTabsContent').show();
+                $('.tab-content #myTabsContent').show();
+                $('.hideclient').show();
+
+                // Close the confirmation modal
+                $('#confirmationModal').modal('hide');
+            });
+
+            $('#confirmNo, #ConfirmClose, #confirmYesdel, #confirmNodel').click(function () {
+                $('#confirmationModal').modal('hide');
+                $('#confirmationModaldel').modal('hide');
+            });
+
+
+            //genquestions submit
+            function showDebtsContent() {
+                $('#myTabsContent').hide();
+                $('#debtscontent').show();
+                $('#editdebts').hide();
+                $('.hideclient').hide();
+                
+            }
+            function showEditDebtsContent() {
+                $('#myTabsContent').hide();
+                $('#debtscontent').hide();
+                $('#editdebts').show();
+                $('.hideclient').hide();
+            }
+
+            // Listen for the #questsubmit button click
+            $('#questsubmit').click(function (event) {
+                event.preventDefault();
+                showDebtsContent();
+            });
+            $('#edit-debts').click(function (event) {
+                event.preventDefault();
+                showEditDebtsContent();
+            });
+            $('#addtradeline').click(function (event) {
+                event.preventDefault();
+                showEditDebtsContent();
+            });
+            $('#editdebt-btn').click(function (event) {
+                event.preventDefault();
+                showDebtsContent();
+            });
+
+        });
+
+        function showDebtsModal() {
+            // Send an AJAX request to load content from debts.html
+            $.ajax({
+                url: 'adddebts.html',
+                dataType: 'html',
+                success: function (data) {
+                    // Insert the loaded content into the modal body
+                    $('#debtsModal .modal-body').html(data);
+
+                    // Show the modal
+                    $('#debtsModal').modal('show');
+                },
+                error: function () {
+                    // Handle errors, e.g., show an error message
+                    alert('Failed to load debts.html');
+                }
+            });
+        }
+
+        $('.close').click(function () {
+            $('#debtsModal').modal('hide');
+        });
+
+        // Get the edit and delete icons.
+        //const editIcon = document.querySelector('.fa-pencil');
+        const deleteIcon = document.querySelector('.fa-trash');
+
+        // Add a click event listener to the edit icon.
+       /* editIcon.addEventListener('click', function () {
+            // Show the confirmation modal.
+            $('#confirmationModaldel').modal('show');
+        });
+        */
+
+        // Add a click event listener to the delete icon.
+        deleteIcon.addEventListener('click', function () {
+            // Show the confirmation modal.
+            $('#confirmationModaldel').modal('show');
+        });
+
+    </script>
+
+</body>
+
+</html>
