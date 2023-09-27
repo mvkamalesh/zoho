@@ -350,7 +350,14 @@ h4.cba {
 .button i {
     margin-right: 10px;
 }
-
+table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  td:first-child {
+    width: 25%;
+  }
 
 .debt-table {
     border-collapse: collapse;
