@@ -1,0 +1,387 @@
+@font-face {
+    font-family: 'Zoho_Puvi_Light';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Light.eot');
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Light.eot') format('embedded-opentype'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Light.woff2') format('woff2'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Zoho_Puvi_Regular';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.eot');
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.eot') format('embedded-opentype'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2') format('woff2'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Zoho_Puvi_Medium';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.eot');
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.eot') format('embedded-opentype'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.woff2') format('woff2'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Zoho_Puvi_Bold';
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.eot');
+    src: url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.eot') format('embedded-opentype'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.woff2') format('woff2'), url('https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(https://webfonts.zohowebstatic.com/robotothin/font.eot);
+    src: url(https://webfonts.zohowebstatic.com/robotothin/font.eot?#iefix) format("eot"), url(https://webfonts.zohowebstatic.com/robotothin/font.woff2) format("woff2"), url(https://webfonts.zohowebstatic.com/robotothin/font.woff) format("woff"), url(https://webfonts.zohowebstatic.com/robotothin/font.ttf) format("truetype"), url(https://webfonts.zohowebstatic.com/robotothin/font.svg#Roboto-Thin) format("svg");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap
+}
+
+#myTabsContent,
+#debtscontent,
+#editdebts {
+    display: none;
+}
+
+#debtscontent {
+    margin-top: 30px;
+}
+
+#confirmYes,  #confirmYesdel{
+    color: #fff;
+    border-radius: 6px;
+    font-family: 'Zoho_Puvi_Medium';
+    box-sizing: border-box;
+    padding: 8px 20px;
+    box-shadow: inset 0 -2px 0 #0061CA;
+    background: transparent linear-gradient(0deg, #0279FF 0%, #00A3F3 100%);
+    font-size: 14px;
+    position: relative;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+#confirmYes:active, #confirmYesdel:active {
+    top: 1px;
+    box-shadow: none;
+    background: #2385EF;
+    position: relative;
+}
+
+#confirmNo,  #confirmNodel{
+    border-radius: 6px;
+    font-family: 'Zoho_Puvi_Medium';
+    font-size: 14px;
+    border: 1px solid #D0D4DF;
+    padding: 7px 20px;
+    color: #313949;
+    box-shadow: inset 0 -1px 0 #D0D4DF;
+    background: transparent linear-gradient(180deg, #FCFDFF 0%, #EAEEF5 100%);
+    outline: 0;
+}
+
+#confirmNo:active,  #confirmNodel:active {
+    top: 1px;
+    box-shadow: none;
+    position: relative;
+    background: #ECF0F7;
+}
+
+body {
+    font-family: 'Zoho_Puvi_Regular';
+    font-size: 0.875rem;
+}
+
+#sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border: 1px solid #d7e2ed;
+    border-left: 0;
+    background: #f5f7f9;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    margin-top: 15px;
+    width: 15%;
+    margin-right: 1%;
+}
+
+.containerbg {
+    background: #EDF0F4;
+}
+
+.righcontent {
+    background: #fff;
+    border: 1px solid #d7e2ed;
+    border-radius: 12px !important;
+    margin-top: 15px;
+    /*margin-left: 15px;*/
+}
+
+.crmLogoIcon {
+    width: 24px;
+    height: 16px;
+    background: url(images/crm_logo_white_ff943ec_.svg) no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crmLogoText {
+    font-size: 18px;
+    color: #fff;
+    padding-right: 14px;
+    ;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    margin-right: 20px
+}
+
+.pull-credit-button {
+    color: #fff;
+    border-radius: 6px;
+    font-family: 'Zoho_Puvi_Medium';
+    box-sizing: border-box;
+    padding: 8px 20px;
+    box-shadow: inset 0 -2px 0 #0061CA;
+    background: transparent linear-gradient(0deg, #0279FF 0%, #00A3F3 100%);
+    font-size: 14px;
+    position: relative;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.pull-credit-button.disabled {
+    background: transparent linear-gradient(0deg, rgb(190, 190, 190) 0%, #c5c5c5 100%);
+    box-shadow: inset 0 -2px 0 #b1b1b1;
+}
+.fa-trash {cursor: pointer;}
+.custom-button {
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+.actionitem .fa {
+    font-size: 16px;
+}
+
+.sysfields input,
+.sysfields select, textarea {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+textarea {width: 100%;}
+.questionwrap .form-label {
+    color: #707070;
+    font-weight: 600;
+}
+
+.form-check-label {
+    color: #707070;
+}
+
+.qtitle {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nameinfo {
+    color: #616E88;
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+.nameinfo p {
+    margin-bottom: 5px;
+}
+
+.nameinfo span {
+    color: #616E88;
+    display: inline-block;
+}
+
+.nameinfo span+span {
+    color: #313949;
+}
+.auth-unauth {text-align: right;}
+.align-right {text-align: right;}
+
+.nav-tabs .nav-item .nav-link.active {
+    border: none;
+    border-bottom: 3px solid #338cf0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link {
+    color: #313949;
+}
+
+.nav-tabs {
+    width: 60%;
+}
+.nav-tabs.reportab {
+    width: 100%;
+}
+.radio-group {
+    margin-left: 20px;
+}
+
+.questionwrap {
+    border: 1px rgb(219, 219, 219) solid;
+    border-radius: 5px;
+    padding: 5px 8px;
+    text-align: left;
+}
+
+.close {
+    background-color: #efefef;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close:hover {
+    background-color: #efefef;
+}
+
+.close-icon {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.custom-width-modal .modal-dialog {
+    max-width: 800px;
+    /* Set your desired custom width here */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: none;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+.debtstable {
+    border-bottom: 1px #dee2e6 solid;
+}
+
+.debtstable th {
+    font-size: 14px;
+    color: #6d6c6c;
+    font-weight: 600;
+}
+
+.debtstable td {
+    font-size: 14px;
+    color: #38577b;
+    font-weight: 600;
+}
+
+a.button.edit.disabled {
+    color: #a5a5a5;
+}
+
+.cba {
+    font-size: 14px;
+    color: #38577b;
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+}
+
+h4.cba {
+    font-size: 16px;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.button-container a {
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    background: #efefef;
+}
+
+.button i {
+    margin-right: 10px;
+}
+
+
+.debt-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.debt-table th,
+.debt-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.debt-table tr:nth-child(even) {
+    background-color: #ffffff;
+    /* Gray background for even rows */
+}
+
+.debt-table tr:nth-child(odd) {
+    background-color: #efefef;
+    /* White background for odd rows */
+}
+
+.debt-table th {
+    background-color: #efefef;
+    /* Header background color */
+    color: #000;
+    /* Header text color */
+}
+
+.modal-title {
+    font-weight: 600;
+}
